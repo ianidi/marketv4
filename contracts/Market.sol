@@ -52,20 +52,13 @@ contract Market is Ownable, ChainlinkClient {
     uint public CONDITIONAL_TOKEN_WEIGHT;
     uint public COLLATERAL_TOKEN_WEIGHT;
 
-    constructor(address _poolManager, address _link) public {
+    constructor(address _poolManager) public {
         CONDITIONAL_TOKEN_WEIGHT = SafeMath.mul(10**18, uint(10));
         COLLATERAL_TOKEN_WEIGHT  = SafeMath.mul(CONDITIONAL_TOKEN_WEIGHT, uint(2));
 
         poolManager = PoolManager(_poolManager);
-
-        // If the address passed in for _link is zero
-        if(_link == address(0)) {
-            // Detect what public network the contract is on
-            setPublicChainlinkToken();
-        } else {
-            // Otherwise set the address to what was passed in
-            setChainlinkToken(_link);
-        }
+        
+        setPublicChainlinkToken();
 
         oracle = 0x72f3dFf4CD17816604dd2df6C2741e739484CA62; //https://market.link/nodes/0x72f3dFf4CD17816604dd2df6C2741e739484CA62/jobs?network=1
         jobId = "5d1f6593e5c74d03ac9c24f4072745e0"; //https://market.link/jobs/fd1d35a3-5a30-49fb-95c9-81eb45d16238?network=1
@@ -342,5 +335,16 @@ contract Market is Ownable, ChainlinkClient {
         oracle = _oracle;
         jobId = _jobId;
         fee = _fee;
+    }
+
+    function setChainlinkToken(address _link) public onlyOwner {
+        // If the address passed in for _link is zero
+        if(_link == address(0)) {
+            // Detect what public network the contract is on
+            setPublicChainlinkToken();
+        } else {
+            // Otherwise set the address to what was passed in
+            setChainlinkToken(_link);
+        }
     }
 }
