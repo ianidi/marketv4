@@ -337,7 +337,7 @@ contract Market is Ownable, ChainlinkClient {
         fee = _fee;
     }
 
-    function setChainlinkToken(address _link) public onlyOwner {
+    function setLinkToken(address _link) public onlyOwner {
         // If the address passed in for _link is zero
         if(_link == address(0)) {
             // Detect what public network the contract is on
