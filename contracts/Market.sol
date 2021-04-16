@@ -63,6 +63,8 @@ contract Market is Ownable, ChainlinkClient {
         oracle = 0x72f3dFf4CD17816604dd2df6C2741e739484CA62; //https://market.link/nodes/0x72f3dFf4CD17816604dd2df6C2741e739484CA62/jobs?network=1
         jobId = "5d1f6593e5c74d03ac9c24f4072745e0"; //https://market.link/jobs/fd1d35a3-5a30-49fb-95c9-81eb45d16238?network=1
         fee = 0.1 * 10 ** 18; // 0.1 LINK
+
+        baseCurrencyList[1] = "BTC";
     }
 
     function requestInitialPrice(string memory symbol) internal returns (bytes32 requestId) {
