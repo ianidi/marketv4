@@ -1,0 +1,11 @@
+build
+node_modules
+.idea/*
+coverage.json
+coverage/
+yarn-error.log
+crytic-export
+mcore_*
+.env
+# Local Netlify folder
+.netlify
