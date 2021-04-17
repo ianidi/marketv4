@@ -1,0 +1,968 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/ianidi/Desktop/work/marketv5/contracts/BColor.sol": {
+      "lastModificationDate": 1618602804772,
+      "contentHash": "37c62a4866ecb23f424c73405c33151a",
+      "sourceName": "contracts/BColor.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "BBronze",
+        "BColor"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/contracts/BConst.sol": {
+      "lastModificationDate": 1618602804772,
+      "contentHash": "93b871088945a91e76e3b4316299e1a7",
+      "sourceName": "contracts/BConst.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BColor.sol"
+      ],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "BConst"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/contracts/BNum.sol": {
+      "lastModificationDate": 1618602804772,
+      "contentHash": "bac0f7c23ff67e3695b8fb800b66c87d",
+      "sourceName": "contracts/BNum.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BConst.sol"
+      ],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "BNum"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/contracts/BMath.sol": {
+      "lastModificationDate": 1618602804772,
+      "contentHash": "366d4328d36e1072bdc4c0713fcef6b9",
+      "sourceName": "contracts/BMath.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BNum.sol"
+      ],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "BMath"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/contracts/BPool.sol": {
+      "lastModificationDate": 1618606290252,
+      "contentHash": "a945b24150f935f654f0f0c71f9a3fa4",
+      "sourceName": "contracts/BPool.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BToken.sol",
+        "./BMath.sol"
+      ],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "BPool"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/contracts/BToken.sol": {
+      "lastModificationDate": 1618606301456,
+      "contentHash": "b789a1cc7a49873c623c444074f511cd",
+      "sourceName": "contracts/BToken.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BNum.sol"
+      ],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "BToken",
+        "BTokenBase",
+        "_IERC20"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/contracts/PoolManager.sol": {
+      "lastModificationDate": 1618606668479,
+      "contentHash": "d0cb1749070970cb379b81cb9c26271b",
+      "sourceName": "contracts/PoolManager.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BFactory.sol",
+        "./BPool.sol",
+        "./ConditionalToken.sol"
+      ],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "PoolManager"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/contracts/BFactory.sol": {
+      "lastModificationDate": 1618606269054,
+      "contentHash": "83a6e9ae5fee2b3d935e10f47728334b",
+      "sourceName": "contracts/BFactory.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BPool.sol"
+      ],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "BFactory"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/contracts/ConditionalToken.sol": {
+      "lastModificationDate": 1618607081078,
+      "contentHash": "1112d2cdd472f6561c5836ba02f16dc6",
+      "sourceName": "contracts/ConditionalToken.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "ConditionalToken"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/contracts/Market.sol": {
+      "lastModificationDate": 1618611571395,
+      "contentHash": "eab849b84a0f9ec363b4959f37fbbe2b",
+      "sourceName": "contracts/Market.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol",
+        "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "@chainlink/contracts/src/v0.5/ChainlinkClient.sol",
+        "./PoolManager.sol",
+        "./ConditionalToken.sol"
+      ],
+      "versionPragmas": [
+        "0.5.12"
+      ],
+      "artifacts": [
+        "Market"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1618606056886,
+      "contentHash": "235c86fd7b8b56863c0a83947451d78b",
+      "sourceName": "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol": {
+      "lastModificationDate": 1618606056737,
+      "contentHash": "cf13b2e67c9912b96f0126c5bc56ff43",
+      "sourceName": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol": {
+      "lastModificationDate": 1618606056736,
+      "contentHash": "32f05ebe84f9be7239abfdaa249669b9",
+      "sourceName": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/@chainlink/contracts/src/v0.5/ChainlinkClient.sol": {
+      "lastModificationDate": 1618606056597,
+      "contentHash": "4f5eebbf4a2257d564a9b9f579885a97",
+      "sourceName": "@chainlink/contracts/src/v0.5/ChainlinkClient.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./Chainlink.sol",
+        "./interfaces/ENSInterface.sol",
+        "./interfaces/LinkTokenInterface.sol",
+        "./interfaces/ChainlinkRequestInterface.sol",
+        "./interfaces/PointerInterface.sol",
+        "./vendor/ENSResolver.sol"
+      ],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "ChainlinkClient"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/@chainlink/contracts/src/v0.5/Chainlink.sol": {
+      "lastModificationDate": 1618606056597,
+      "contentHash": "49ce3a1a9dc888472b5c0e8d16439bfb",
+      "sourceName": "@chainlink/contracts/src/v0.5/Chainlink.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./vendor/CBOR.sol",
+        "./vendor/Buffer.sol"
+      ],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "Chainlink"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/@chainlink/contracts/src/v0.5/interfaces/ENSInterface.sol": {
+      "lastModificationDate": 1618606056843,
+      "contentHash": "34b633fe7ad1011dfe848864f22681d2",
+      "sourceName": "@chainlink/contracts/src/v0.5/interfaces/ENSInterface.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "ENSInterface"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/@chainlink/contracts/src/v0.5/interfaces/LinkTokenInterface.sol": {
+      "lastModificationDate": 1618606056843,
+      "contentHash": "1ce5020b0226a0a81df9bc654f49c858",
+      "sourceName": "@chainlink/contracts/src/v0.5/interfaces/LinkTokenInterface.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "LinkTokenInterface"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/@chainlink/contracts/src/v0.5/interfaces/ChainlinkRequestInterface.sol": {
+      "lastModificationDate": 1618606056843,
+      "contentHash": "01f13f47d4c404ef035335e941658620",
+      "sourceName": "@chainlink/contracts/src/v0.5/interfaces/ChainlinkRequestInterface.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "ChainlinkRequestInterface"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/@chainlink/contracts/src/v0.5/interfaces/PointerInterface.sol": {
+      "lastModificationDate": 1618606056843,
+      "contentHash": "9b651cc641abb5cb2ec5d2a201fae86b",
+      "sourceName": "@chainlink/contracts/src/v0.5/interfaces/PointerInterface.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "PointerInterface"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/@chainlink/contracts/src/v0.5/vendor/ENSResolver.sol": {
+      "lastModificationDate": 1618606056844,
+      "contentHash": "c8e93dcf66eab534ca1aa76e3d5fc6f1",
+      "sourceName": "@chainlink/contracts/src/v0.5/vendor/ENSResolver.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "ENSResolver"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/@chainlink/contracts/src/v0.5/vendor/CBOR.sol": {
+      "lastModificationDate": 1618606056844,
+      "contentHash": "0c4914c0761716a986ff4e63ee2dd4cd",
+      "sourceName": "@chainlink/contracts/src/v0.5/vendor/CBOR.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./Buffer.sol"
+      ],
+      "versionPragmas": [
+        ">=0.4.19 <0.7.0"
+      ],
+      "artifacts": [
+        "CBOR"
+      ]
+    },
+    "/Users/ianidi/Desktop/work/marketv5/node_modules/@chainlink/contracts/src/v0.5/vendor/Buffer.sol": {
+      "lastModificationDate": 1618606056844,
+      "contentHash": "f16e16f9f590995f751148ab4f9e017f",
+      "sourceName": "@chainlink/contracts/src/v0.5/vendor/Buffer.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "Buffer"
+      ]
+    }
+  }
+}

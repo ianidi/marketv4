@@ -21,7 +21,6 @@ contract Market is Ownable, ChainlinkClient {
 
     struct MarketStruct {
         bool exist;
-        Status status;
         uint marketID;
         uint baseCurrencyID;
         uint initialPrice;
@@ -30,6 +29,7 @@ contract Market is Ownable, ChainlinkClient {
         uint duration;
         uint totalDeposit;
         uint totalRedemption;
+        Status status;
         address collateralToken;
         address bearToken;
         address bullToken;
@@ -44,9 +44,9 @@ contract Market is Ownable, ChainlinkClient {
 
     PoolManager public poolManager;
 
-    address private oracle;
-    bytes32 private jobId;
-    uint256 private fee;
+    address private chainlinkOracle;
+    bytes32 private chainlinkJobID;
+    uint256 private chainlinkFee;
 
     uint public currentMarketID = 1;
     uint public CONDITIONAL_TOKEN_WEIGHT;
@@ -58,22 +58,20 @@ contract Market is Ownable, ChainlinkClient {
 
         poolManager = PoolManager(_poolManager);
         
-        setPublicChainlinkToken();
-
-        oracle = 0x72f3dFf4CD17816604dd2df6C2741e739484CA62; //https://market.link/nodes/0x72f3dFf4CD17816604dd2df6C2741e739484CA62/jobs?network=1
-        jobId = "5d1f6593e5c74d03ac9c24f4072745e0"; //https://market.link/jobs/fd1d35a3-5a30-49fb-95c9-81eb45d16238?network=1
-        fee = 0.1 * 10 ** 18; // 0.1 LINK
+        chainlinkOracle = 0x72f3dFf4CD17816604dd2df6C2741e739484CA62; //https://market.link/nodes/0x72f3dFf4CD17816604dd2df6C2741e739484CA62/jobs?network=1
+        chainlinkJobID = "5d1f6593e5c74d03ac9c24f4072745e0"; //https://market.link/jobs/fd1d35a3-5a30-49fb-95c9-81eb45d16238?network=1
+        chainlinkFee = 0.1 * 10 ** 18; // 0.1 LINK
 
         baseCurrencyList[1] = "BTC";
     }
 
     function requestInitialPrice(string memory symbol) internal returns (bytes32 requestId) {
-        Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfillInitialPrice.selector);
+        Chainlink.Request memory request = buildChainlinkRequest(chainlinkJobID, address(this), this.fulfillInitialPrice.selector);
         
         request.add("get", string(abi.encodePacked("https://min-api.cryptocompare.com/data/price?fsym=", symbol, "&tsyms=USD")));
         request.add("path", "USD");
         
-        return sendChainlinkRequestTo(oracle, request, fee);
+        return sendChainlinkRequestTo(chainlinkOracle, request, chainlinkFee);
     }
     
     function fulfillInitialPrice(bytes32 _requestId, uint _price) public recordChainlinkFulfillment(_requestId)
@@ -90,12 +88,12 @@ contract Market is Ownable, ChainlinkClient {
     }
 
     function requestFinalPrice(string memory symbol) internal returns (bytes32 requestId) {
-        Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfillFinalPrice.selector);
+        Chainlink.Request memory request = buildChainlinkRequest(chainlinkJobID, address(this), this.fulfillFinalPrice.selector);
         
         request.add("get", string(abi.encodePacked("https://min-api.cryptocompare.com/data/price?fsym=", symbol, "&tsyms=USD")));
         request.add("path", "USD");
         
-        return sendChainlinkRequestTo(oracle, request, fee);
+        return sendChainlinkRequestTo(chainlinkOracle, request, chainlinkFee);
     }
     
     function fulfillFinalPrice(bytes32 _requestId, uint _price) public recordChainlinkFulfillment(_requestId)
@@ -197,8 +195,12 @@ contract Market is Ownable, ChainlinkClient {
 
         markets[currentMarketID] = marketStruct;
 
+        // TODO:
         bytes32 requestID = requestInitialPrice(baseCurrencyList[_baseCurrencyID]);
         requestToMarketID[requestID] = currentMarketID;
+
+        // markets[currentMarketID].initialPrice = 100;
+        // markets[currentMarketID].status = Status.Running;
 
         //Increment current market ID
         currentMarketID++;
@@ -237,8 +239,12 @@ contract Market is Ownable, ChainlinkClient {
             "Market closing time hasn't yet arrived"
         );
 
+        // TODO:
         bytes32 requestID = requestFinalPrice(baseCurrencyList[markets[_marketID].baseCurrencyID]);
         requestToMarketID[requestID] = _marketID;
+
+        // markets[currentMarketID].initialPrice = 200;
+        // markets[currentMarketID].status = Status.Closed;
     }
 
     //Buy new token pair for collateral token
@@ -333,10 +339,10 @@ contract Market is Ownable, ChainlinkClient {
         return markets[_marketID].exist;
     }
 
-    function setChainlink(address _oracle, bytes32 _jobId, uint256 _fee) public onlyOwner {
-        oracle = _oracle;
-        jobId = _jobId;
-        fee = _fee;
+    function setChainlink(address _chainlinkOracle, bytes32 _chainlinkJobID, uint256 _chainlinkFee) public onlyOwner {
+        chainlinkOracle = _chainlinkOracle;
+        chainlinkJobID = _chainlinkJobID;
+        chainlinkFee = _chainlinkFee;
     }
 
     function setLinkToken(address _link) public onlyOwner {
